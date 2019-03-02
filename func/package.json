@@ -1,0 +1,15 @@
+{
+  "name": "ra-func",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "azure-storage": "2.10.2",
+    "twit": "2.2.11"
+  }
+}
