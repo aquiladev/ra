@@ -9,7 +9,7 @@ var config = {
 };
 
 var T = new Twit(config);
-var query = { q: "#ethereum OR #eth OR #blockchain OR #polkadot OR #substrate OR #bitcoin OR #swarm OR #ipfs min_retweets:20 min_faves:30 -filter:retweets", count: 100, result_type: "recent", lang: "en" };
+var query = { q: "#ethereum OR #eth OR #blockchain OR #polkadot OR #substrate OR #bitcoin OR #swarm OR #ipfs -#giveaway -#airdrop min_retweets:20 min_faves:30 -filter:retweets", count: 100, result_type: "recent", lang: "en" };
 
 function getPopularLatest() {
     T.get('search/tweets', query, function (error, data) {
@@ -29,7 +29,6 @@ function getPopularLatest() {
             }
 
             var gen = azure.TableUtilities.entityGenerator;
-
             data.statuses.forEach(x => {
                 var entry = {
                     PartitionKey: gen.String(x.id_str),
