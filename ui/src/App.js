@@ -127,14 +127,14 @@ class App extends Component {
         <AppBar position='absolute' color='default' className={classes.appBar}>
           <Toolbar>
             <Typography variant='h6' color='inherit' noWrap>
-              Ra
+              Ra ({this.state.entries.length})
             </Typography>
           </Toolbar>
         </AppBar>
         <div className={classes.root}>
           <List component='nav'>
             {
-              this.state.entries.map(x => {
+              this.state.entries.slice(0, 100).map(x => {
                 const { urls, media } = x.entities;
                 let link = '';
                 if (urls && urls.length) {
